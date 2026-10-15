@@ -15,7 +15,7 @@ Für alle, die keine Entwickler sind und trotzdem mit GitHub arbeiten. Du musst 
 | Merge Request | dasselbe wie ein Pull Request. GitHub sagt Pull Request, das Konkurrenzprodukt GitLab sagt Merge Request. Bei uns heißt es immer Pull Request. |
 | Merge | der Klick, mit dem die Änderungen aus dem Branch in `main` übernommen werden. Danach gilt die neue Fassung. |
 | Issue | eine Aufgabe in GitHub, ähnlich wie eine Asana-Aufgabe. Jede Arbeit beginnt mit einem Issue, damit klar ist, worum es geht. |
-| Prüfung (auch CI oder Check) | ein kleines Programm, das bei jedem Pull Request von selbst läuft. Es sucht nach Passwörtern und Schlüsseln im Code und schaut, ob die README vollständig ist. Grün heißt bestanden, rot heißt nicht bestanden. |
+| Prüfung (auch CI oder Check) | ein kleines Programm, das bei jedem Pull Request von selbst läuft. Es sucht nach Passwörtern und Schlüsseln im Code, schaut, ob die README vollständig ist, und ob im Changelog steht, was gemacht wurde. Grün heißt bestanden, rot heißt nicht bestanden. |
 
 ## Der Weg einer Änderung in einem Bild
 
