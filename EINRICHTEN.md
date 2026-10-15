@@ -8,7 +8,7 @@ Wörter wie Repo, Branch oder Pull Request sind neu für dich? Dann lies vorher 
 
 1. Leg auf github.com ein eigenes Konto an, mit deiner Firmen-Mailadresse. Ein Konto pro Person, kein gemeinsames.
 2. Schalte die Zwei-Faktor-Anmeldung ein: oben rechts auf dein Bild, dann „Settings“, „Password and authentication“, „Enable two-factor authentication“. Eine Authenticator-App auf dem Handy reicht.
-3. Schick deinen GitHub-Namen an die Org-Admins. Sie nehmen dich in die Org und in das Team deines Bereichs auf. Erst danach darfst du in den Repos deines Bereichs Änderungen hochladen.
+3. Schick deinen GitHub-Namen an die Org-Admins. Sie nehmen dich in die Org und in das Team „Alle“ auf. Erst danach darfst du in den Repos Änderungen hochladen.
 
 ## 2. Programme installieren
 
@@ -62,7 +62,7 @@ Rot heißt: Die automatische Prüfung hat etwas gefunden. Das ist kein Unglück,
 
 | Meldung | Bedeutung | Was tun |
 |---|---|---|
-| `Permission denied` oder `403` beim Hochladen | Du bist noch nicht im Team deines Bereichs | Org-Admins fragen |
+| `Permission denied` oder `403` beim Hochladen | Du bist noch nicht im Team „Alle“, oder das Repo gehört nicht zum Team | Org-Admins fragen |
 | `gh: command not found` | Schritt 2 hat nicht geklappt | `brew install gh` noch einmal ausführen |
 | `gitleaks: command not found` | gitleaks fehlt | `brew install gitleaks` |
 | Claude kennt die Regeln des Repos nicht | Die App ist nicht im Repo-Ordner geöffnet | In der App den Ordner des Repos wählen |
