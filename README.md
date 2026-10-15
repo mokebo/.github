@@ -11,6 +11,7 @@ Dieses Repo ist öffentlich. Hier liegen nur Vorlagen und die Prüfung, keine in
 |---|---|
 | `GITHUB-EINFACH-ERKLAERT.md` | Branch, Pull Request, Merge und Co. für Nicht-Entwickler |
 | `CONTRIBUTING.md` | So arbeiten wir mit GitHub |
+| `CHANGELOG.md` | Was sich in diesem Repo geändert hat |
 | `.github/ISSUE_TEMPLATE/` | drei Issue-Formulare: Neue Automation, Läuft falsch, Idee |
 | `.github/pull_request_template.md` | Vorlage für jeden Pull Request |
 | `.github/workflows/basis-pruefung.yml` | Prüfung, die jedes Repo aufruft |

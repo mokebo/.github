@@ -49,7 +49,9 @@ In privaten Repos erzwingt GitHub die Pflichtfelder nicht. Leere Felder fallen a
 
 Jedes Repo ruft bei jedem Pull Request und bei jedem Push auf `main` die Prüfung `basis-pruefung.yml` aus diesem Repo auf. Sie sucht mit gitleaks nach Zugangsdaten im Code und in der ganzen Git-Historie. Außerdem prüft sie, ob in den ersten 10 Zeilen der `README.md` die Zeilen `**Zweck:**`, `**Verantwortlich:**` und `**Status:**` mit einem echten Wert stehen. Leere Werte und Platzhalter wie `<Name>` zählen nicht.
 
-Die Prüfung sagt nur, dass keine Zugangsdaten gefunden wurden und die README einen Kopf hat. Ob eine Automation fachlich richtig rechnet, prüft sie nicht. Dafür braucht jeder Check eigene Tests.
+Bei einem Pull Request prüft sie zusätzlich, ob `CHANGELOG.md` geändert wurde. So hält jedes Repo fest, was gemacht wurde, ohne dass jemand daran denken muss. Claude schreibt den Eintrag selbst. Für Kleinkram wie einen Tippfehler kreuzt man in der PR-Vorlage das Kästchen „Kleinkram, kein Changelog-Eintrag nötig“ an. Dann bleibt die Prüfung grün.
+
+Die Prüfung sagt nur, dass keine Zugangsdaten gefunden wurden, die README einen Kopf hat und das Changelog einen Eintrag. Ob eine Automation fachlich richtig rechnet, prüft sie nicht. Dafür braucht jeder Check eigene Tests.
 
 Wird die Prüfung rot, steht der Grund im Pull Request unter „Checks“. Fehlt eine README-Zeile, reicht es, sie nachzutragen.
 

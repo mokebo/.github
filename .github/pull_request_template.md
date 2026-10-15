@@ -25,6 +25,7 @@ Wie es geprüft wurde (z. B. Testlauf ohne Schreiben, zweiter Lauf, Summen vorhe
 ## Checkliste
 - [ ] Alle Prüfungen grün. Bei roter oder noch laufender Prüfung wird nicht gemergt
 - [ ] README aktuell: was es macht, wann es läuft, was tun, wenn es kaputt ist
-- [ ] CHANGELOG-Eintrag
+- [ ] CHANGELOG-Eintrag. Fehlt er, wird die Prüfung rot
+- [ ] Kleinkram, kein Changelog-Eintrag nötig (z. B. Tippfehler). Nur ankreuzen, wenn es stimmt
 - [ ] Entscheidung festgehalten, falls nötig
 - [ ] Keine Zugangsdaten im Code

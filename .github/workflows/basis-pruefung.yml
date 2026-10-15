@@ -37,6 +37,27 @@ jobs:
       - name: Secret-Scan
         run: gitleaks git --redact --verbose .
 
+      # Bei Pull Requests muss CHANGELOG.md geaendert sein.
+      # Ausweg fuer Kleinkram: das Kaestchen "Kleinkram, kein Changelog-Eintrag noetig" in der
+      # PR-Vorlage ankreuzen. Gezaehlt wird nur das angekreuzte Kaestchen, nicht die Worte allein.
+      # HEAD ist beim Pull Request der Probe-Merge, HEAD^1 der aktuelle Stand des Ziel-Branchs.
+      - name: Changelog-Eintrag
+        if: github.event_name == 'pull_request'
+        env:
+          PR_TEXT: ${{ github.event.pull_request.body }}
+        run: |
+          if [[ "$PR_TEXT" =~ \[[xX]\][[:space:]]*Kleinkram ]]; then
+            echo "Kaestchen 'Kleinkram' ist angekreuzt. Pruefung uebersprungen."
+            exit 0
+          fi
+          test -f CHANGELOG.md || { echo "::error::CHANGELOG.md fehlt im Repo"; exit 1; }
+          if [ -n "$(git diff --name-only HEAD^1 HEAD -- CHANGELOG.md)" ]; then
+            echo "CHANGELOG.md wurde geaendert."
+          else
+            echo "::error::CHANGELOG.md wurde in diesem Pull Request nicht geaendert. Eintrag ergaenzen oder bei Kleinkram das Kaestchen 'Kleinkram' im PR ankreuzen."
+            exit 1
+          fi
+
       # Die ersten 10 Zeilen muessen Zweck, Verantwortlich und Status mit echtem Wert haben.
       # Leere Werte und Platzhalter in <spitzen Klammern> zaehlen nicht.
       - name: README-Kopf vorhanden
