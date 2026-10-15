@@ -1,0 +1,22 @@
+name: Idee
+description: Etwas, das wir vielleicht bauen wollen. Noch nicht entschieden, ohne Plan.
+title: "Idee: "
+type: Feature
+body:
+  - type: textarea
+    id: idee
+    attributes:
+      label: Die Idee in zwei Sätzen
+    validations:
+      required: true
+  - type: textarea
+    id: nutzen
+    attributes:
+      label: Wem nützt das, und woran merken wir, dass es sich gelohnt hat?
+    validations:
+      required: true
+  - type: input
+    id: quelle
+    attributes:
+      label: Woher kommt die Idee?
+      description: Meeting, Chat oder Person und Datum.

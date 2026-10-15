@@ -13,7 +13,7 @@ Jeder Bereich hat ein eigenes Repo, zum Beispiel eins für alle Ops-Checks. Neue
 ## Ablauf einer Aufgabe
 
 1. Den Wunsch als Aufgabe in Asana anlegen.
-2. Wer baut, legt im passenden Repo ein Issue mit der Vorlage an und trägt den Asana-Link ein. In die Asana-Aufgabe kommt der Issue-Link als Kommentar.
+2. Wer baut, legt im passenden Repo ein Issue mit einem der Formulare an (siehe unten) und trägt den Asana-Link ein. In die Asana-Aufgabe kommt der Issue-Link als Kommentar.
 3. Einen Branch anlegen, Name `<issue-nummer>-<kurzname>`, zum Beispiel `12-lieferzeit-check`.
 4. Auf diesem Branch bauen. Claude pflegt dabei README-Status, Changelog und, wenn nötig, eine Entscheidung im Ordner `decisions/`.
 5. Einen Pull Request mit der Vorlage öffnen und `Closes #12` hineinschreiben.
@@ -28,18 +28,22 @@ Ist die Arbeit noch nicht fertig, steht im Issue ein Kommentar mit dem Stand, de
 - Nie direkt auf `main` arbeiten und nie `git push --force`.
 - Ist eine Prüfung rot oder läuft sie noch, wird nicht gemergt. Eine Prüfung, die gar nicht gelaufen ist, gilt nicht als bestanden.
 - Keine Zugangsdaten in Dateien. Im Code steht nur der Name des Credentials.
-- Ändert ein Pull Request Daten bei Kunden, in Plenty, in Shopify oder bei Geldflüssen, bekommt er das Label `live-wirkung`. Vor dem Merge ist dann ein Gegencheck Pflicht: Dubletten, Summen und 3 Stichproben. Das Ergebnis steht im Pull Request. Eine zweite Person muss nicht zustimmen.
+- Jeder Pull Request beantwortet die Frage „Schreibt das irgendwohin?“, also nach Plenty, Shopify, in die Buchhaltung, in ein Sheet oder als Nachricht an Kunden. Bei Ja steht im Pull Request, was ein zweiter Lauf direkt hintereinander macht und wie das geprüft wurde. Eine zweite Person muss nicht zustimmen.
 - Neue Repos haben keinen Auto-Sync auf `main`. Notizen gehen in den Pull Request oder als Kommentar ins Issue.
 
-## Labels
+## Issue-Formulare und Issue-Typen
 
-| Label | Bedeutung |
-|---|---|
-| `typ:check` | neue Prüfaufgabe automatisieren |
-| `typ:fehler` | etwas Bestehendes läuft falsch |
-| `typ:idee` | noch nicht entschieden, ob gebaut wird |
-| `laufzeit:n8n`, `laufzeit:apps-script`, `laufzeit:code` | wo es läuft, sobald das entschieden ist |
-| `live-wirkung` | ändert Daten bei Kunden, in Plenty, Shopify oder Geldflüssen |
+Beim Anlegen eines Issues bietet GitHub drei Formulare an. Jedes setzt automatisch einen Issue-Typ. Labels brauchen wir dafür keine.
+
+| Formular | Wofür | Issue-Typ |
+|---|---|---|
+| Neue Automation | etwas soll künftig automatisch passieren, der Bau ist entschieden | `Task` |
+| Läuft falsch | eine bestehende Automation macht etwas Falsches oder läuft nicht | `Bug` |
+| Idee | vielleicht später, noch nicht entschieden | `Feature` |
+
+Das Formular „Neue Automation“ fragt nach dem Anlass in der Form „Wenn … soll … damit …“, nach der Zeit, die uns der Bau wert ist, und danach, was bewusst nicht dazugehört. Wird der Bau teurer als geplant, wird neu entschieden, statt einfach weiterzubauen.
+
+In privaten Repos erzwingt GitHub die Pflichtfelder nicht. Leere Felder fallen also nur auf, wenn jemand hinschaut.
 
 ## Die automatische Prüfung
 

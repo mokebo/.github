@@ -32,7 +32,7 @@ Du zweigst von `main` ab, arbeitest auf deinem Branch und speicherst Commits. Da
 
 Das ist der normale Weg. Du sagst Claude in einfachen Worten, was passieren soll. Claude tippt die Befehle.
 
-1. Lege das Issue an oder sag Claude: „Leg im Repo mokebo-ops-automations ein Issue mit der Vorlage Check-Task an, für den Lieferzeit-Check.“
+1. Lege das Issue an oder sag Claude: „Leg im Repo mokebo-ops-automations ein Issue mit dem Formular Neue Automation an, für den Lieferzeit-Check.“
 2. Sag: „Leg einen Branch für Issue 12 an und arbeite darauf.“
 3. Baut zusammen, was gebaut werden soll. Claude speichert zwischendurch Commits.
 4. Sag: „Push den Branch und öffne einen Pull Request.“
