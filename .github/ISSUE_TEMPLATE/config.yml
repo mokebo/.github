@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: GitHub einfach erklärt
+    url: https://github.com/mokebo/.github/blob/main/GITHUB-EINFACH-ERKLAERT.md
+    about: Branch, Pull Request, Merge und Co. für Nicht-Entwickler.
+  - name: So arbeiten wir mit GitHub
+    url: https://github.com/mokebo/.github/blob/main/CONTRIBUTING.md
+    about: Ablauf, Regeln und was die automatische Prüfung macht.

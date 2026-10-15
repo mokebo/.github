@@ -1,0 +1,52 @@
+name: Läuft falsch
+description: Eine bestehende Automation macht etwas anderes als gedacht oder läuft gar nicht.
+title: "Fehler: "
+type: Bug
+body:
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Was sollte passieren?
+    validations:
+      required: true
+  - type: textarea
+    id: passiert
+    attributes:
+      label: Was ist stattdessen passiert?
+      description: So genau wie möglich. Zahlen, Auftragsnummern, Fehlermeldung, Screenshot.
+    validations:
+      required: true
+  - type: input
+    id: seit
+    attributes:
+      label: Seit wann?
+      placeholder: z. B. seit 14.10., 7 Uhr
+    validations:
+      required: true
+  - type: input
+    id: wo
+    attributes:
+      label: Welche Automation, und Link zum Lauf
+      description: Name oder ID des Workflows, Link zur Ausführung in n8n oder zum Log, falls vorhanden.
+    validations:
+      required: true
+  - type: dropdown
+    id: schaden
+    attributes:
+      label: Hat es schon etwas Falsches geschrieben?
+      description: Zum Beispiel doppelte Buchungen, falsche Daten in Plenty oder Shopify, Nachrichten an Kunden.
+      options:
+        - nein
+        - ja
+        - weiß nicht
+    validations:
+      required: true
+  - type: textarea
+    id: getan
+    attributes:
+      label: Was wurde schon getan?
+      description: Zum Beispiel Automation gestoppt, Daten von Hand korrigiert, jemand informiert.
+  - type: input
+    id: asana
+    attributes:
+      label: Asana-Link, falls vorhanden

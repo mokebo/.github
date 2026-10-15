@@ -1,0 +1,78 @@
+name: Neue Automation
+description: Etwas soll künftig automatisch passieren. Es ist entschieden, dass gebaut wird.
+title: "Automation: "
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Beschreibe den Anlass, nicht die Technik. Wörter wie Branch oder Pull Request sind neu? Siehe GITHUB-EINFACH-ERKLAERT.md im Repo mokebo/.github.
+  - type: textarea
+    id: wenn
+    attributes:
+      label: Wenn … (Auslöser)
+      description: Was löst die Automation aus? Eine Uhrzeit, eine neue Bestellung, ein Ticket, eine Zeile im Sheet.
+      placeholder: Wenn jeden Morgen um 7 Uhr die offenen Aufträge vom Vortag vorliegen …
+    validations:
+      required: true
+  - type: textarea
+    id: soll
+    attributes:
+      label: … soll … (was passiert)
+      description: Was soll die Automation dann tun?
+      placeholder: … soll sie alle Aufträge finden, deren Lieferzeit überschritten ist, …
+    validations:
+      required: true
+  - type: textarea
+    id: damit
+    attributes:
+      label: … damit … (Ergebnis)
+      description: Was ist danach besser? Wie viel Zeit spart es heute, und wer merkt den Unterschied?
+      placeholder: … damit Ops sie bis 9 Uhr in Slack sieht und die tägliche Handprüfung (20 Minuten) wegfällt.
+    validations:
+      required: true
+  - type: dropdown
+    id: zeit
+    attributes:
+      label: Wie viel Zeit ist es uns wert?
+      description: Die Obergrenze für den Bau. Wird es mehr, wird neu entschieden statt einfach weitergebaut.
+      options:
+        - bis 2 Stunden
+        - bis 1 Tag
+        - bis 3 Tage
+        - mehr, erst besprechen
+    validations:
+      required: true
+  - type: dropdown
+    id: laufzeit
+    attributes:
+      label: Wo soll es laufen?
+      options:
+        - noch offen
+        - n8n
+        - Google Apps Script
+        - eigener Code
+  - type: textarea
+    id: fertig
+    attributes:
+      label: Fertig, wenn …
+      description: Jeder Punkt lässt sich mit Ja oder Nein beantworten.
+      value: |
+        - [ ] läuft und ist getestet (wie: …)
+        - [ ] README sagt: was es macht, wann es läuft, was tun, wenn es kaputt ist
+    validations:
+      required: true
+  - type: textarea
+    id: nicht
+    attributes:
+      label: Nicht Teil davon
+      description: Was bauen wir bewusst nicht? Das verhindert, dass die Aufgabe immer größer wird.
+  - type: input
+    id: zustaendig
+    attributes:
+      label: Fachlich zuständig
+      description: Wer weiß, ob das Ergebnis stimmt?
+  - type: input
+    id: asana
+    attributes:
+      label: Asana-Link
