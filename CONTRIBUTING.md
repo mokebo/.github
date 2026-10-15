@@ -2,7 +2,7 @@
 
 Diese Regeln gelten für jedes Repo der Org mokebo, das keine eigene `CONTRIBUTING.md` hat.
 
-Wörter wie Branch, Pull Request oder Merge sind neu für dich? Dann lies zuerst [GitHub einfach erklärt](GITHUB-EINFACH-ERKLAERT.md).
+Wörter wie Branch, Pull Request oder Merge sind neu für dich? Dann lies zuerst [GitHub einfach erklärt](GITHUB-EINFACH-ERKLAERT.md). Du arbeitest zum ersten Mal mit unseren Repos? Dann richte vorher deinen Rechner ein: [Einrichten](EINRICHTEN.md).
 
 ## Asana und GitHub
 

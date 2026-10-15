@@ -9,6 +9,7 @@ Dieses Repo ist öffentlich. Hier liegen nur Vorlagen und die Prüfung, keine in
 
 | Datei | Wofür |
 |---|---|
+| `EINRICHTEN.md` | Was man einmal am eigenen Rechner einrichtet, bevor es losgeht |
 | `GITHUB-EINFACH-ERKLAERT.md` | Branch, Pull Request, Merge und Co. für Nicht-Entwickler |
 | `CONTRIBUTING.md` | So arbeiten wir mit GitHub |
 | `CHANGELOG.md` | Was sich in diesem Repo geändert hat |
