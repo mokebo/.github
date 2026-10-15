@@ -2,6 +2,8 @@
 
 Diese Regeln gelten für jedes Repo der Org mokebo, das keine eigene `CONTRIBUTING.md` hat.
 
+Wörter wie Branch, Pull Request oder Merge sind neu für dich? Dann lies zuerst [GitHub einfach erklärt](GITHUB-EINFACH-ERKLAERT.md).
+
 ## Asana und GitHub
 
 Wünsche kommen wie bisher als Aufgabe in Asana an. Sobald etwas gebaut wird, läuft die Arbeit in GitHub weiter. Die Asana-Aufgabe und das GitHub-Issue verlinken aufeinander. Wer nur etwas braucht und nicht selbst baut, bleibt in Asana.

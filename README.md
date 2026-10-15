@@ -9,6 +9,7 @@ Dieses Repo ist öffentlich. Hier liegen nur Vorlagen und die Prüfung, keine in
 
 | Datei | Wofür |
 |---|---|
+| `GITHUB-EINFACH-ERKLAERT.md` | Branch, Pull Request, Merge und Co. für Nicht-Entwickler |
 | `CONTRIBUTING.md` | So arbeiten wir mit GitHub |
 | `.github/ISSUE_TEMPLATE/check-task.md` | Vorlage für ein Issue „Check-Task“ |
 | `.github/pull_request_template.md` | Vorlage für jeden Pull Request |
