@@ -2,7 +2,8 @@ name: ci
 on:
   pull_request:
     # edited: damit die Prüfung neu läuft, wenn jemand den PR-Text ändert (z. B. "kein Changelog").
-    types: [opened, synchronize, reopened, edited]
+    # ready_for_review: Entwürfe prüfen den Changelog nicht, beim Umstellen auf bereit läuft die Prüfung neu.
+    types: [opened, synchronize, reopened, edited, ready_for_review]
   push:
     branches: [main]
 permissions:
