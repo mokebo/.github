@@ -4,6 +4,8 @@ Ein Eintrag je Pull Request, neueste oben. Format:
 
 `TT.MM.JJJJ: Was sich geändert hat. Warum. (#Issue-Nummer)`
 
+04.11.2026: Bei Entwurfs-PRs prüft die Changelog-Prüfung nicht mehr, sie meldet nur einen Hinweis. Sobald der PR auf bereit steht, läuft sie neu und verlangt den Eintrag. Vorher war fast jeder neue Entwurf rot, weil der Eintrag laut Ablauf erst am Ende kommt. Repos brauchen dafür in ihrer ci.yml den Auslöser `ready_for_review`. (#7)
+
 15.10.2026: EINRICHTEN.md nennt das Team „Alle“ statt „Team deines Bereichs“. Seit heute gibt es genau ein Team, alle Org-Mitglieder haben darüber Schreibrecht in den Bereichs-Repos. (#4)
 
 15.10.2026: Neue Anleitung EINRICHTEN.md: Konto, Zwei-Faktor-Anmeldung, Installation, Anmeldung, erster Übungsauftrag und was bei Rot zu tun ist. Damit neue Leute ohne Entwickler-Erfahrung nicht an der Einrichtung hängen bleiben. (#4)

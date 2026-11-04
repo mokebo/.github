@@ -41,11 +41,19 @@ jobs:
       # Ausweg fuer Kleinkram: das Kaestchen "Kleinkram, kein Changelog-Eintrag noetig" in der
       # PR-Vorlage ankreuzen. Gezaehlt wird nur das angekreuzte Kaestchen, nicht die Worte allein.
       # HEAD ist beim Pull Request der Probe-Merge, HEAD^1 der aktuelle Stand des Ziel-Branchs.
+      # Bei Entwurfs-PRs wird nicht geprueft: laut Ablauf kommt der Eintrag erst am Ende.
+      # Damit die Pruefung beim Umstellen auf "bereit" neu laeuft, braucht die ci.yml des Repos
+      # den Ausloeser ready_for_review.
       - name: Changelog-Eintrag
         if: github.event_name == 'pull_request'
         env:
           PR_TEXT: ${{ github.event.pull_request.body }}
+          PR_ENTWURF: ${{ github.event.pull_request.draft }}
         run: |
+          if [ "$PR_ENTWURF" = "true" ]; then
+            echo "::notice::Entwurfs-PR. Changelog wird erst geprueft, wenn der PR auf bereit steht."
+            exit 0
+          fi
           if [[ "$PR_TEXT" =~ \[[xX]\][[:space:]]*Kleinkram ]]; then
             echo "Kaestchen 'Kleinkram' ist angekreuzt. Pruefung uebersprungen."
             exit 0
