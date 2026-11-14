@@ -4,6 +4,8 @@ Ein Eintrag je Pull Request, neueste oben. Format:
 
 `TT.MM.JJJJ: Was sich geändert hat. Warum. (#Issue-Nummer)`
 
+14.11.2026: README aktualisiert (Stand, Hinweis auf `ci.yml`) und um den Abschnitt „Wenn die Prüfung kaputt ist“ ergänzt: Rückweg auf eine ältere feste Version. CONTRIBUTING verweist darauf. Die Prüfung selbst ist unverändert. Damit ein Repo, das wegen eines Prüfungsfehlers rot ist, ohne Rückfrage wieder grün wird. (#9)
+
 04.11.2026: Bei Entwurfs-PRs prüft die Changelog-Prüfung nicht mehr, sie meldet nur einen Hinweis. Sobald der PR auf bereit steht, läuft sie neu und verlangt den Eintrag. Vorher war fast jeder neue Entwurf rot, weil der Eintrag laut Ablauf erst am Ende kommt. Repos brauchen dafür in ihrer ci.yml den Auslöser `ready_for_review`. (#7)
 
 15.10.2026: EINRICHTEN.md nennt das Team „Alle“ statt „Team deines Bereichs“. Seit heute gibt es genau ein Team, alle Org-Mitglieder haben darüber Schreibrecht in den Bereichs-Repos. (#4)

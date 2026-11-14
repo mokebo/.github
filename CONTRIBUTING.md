@@ -53,7 +53,7 @@ Bei einem Pull Request prüft sie zusätzlich, ob `CHANGELOG.md` geändert wurde
 
 Die Prüfung sagt nur, dass keine Zugangsdaten gefunden wurden, die README einen Kopf hat und das Changelog einen Eintrag. Ob eine Automation fachlich richtig rechnet, prüft sie nicht. Dafür braucht jeder Check eigene Tests.
 
-Wird die Prüfung rot, steht der Grund im Pull Request unter „Checks“. Fehlt eine README-Zeile, reicht es, sie nachzutragen.
+Wird die Prüfung rot, steht der Grund im Pull Request unter „Checks“. Fehlt eine README-Zeile, reicht es, sie nachzutragen. Liegt der Fehler in der Prüfung selbst, beschreibt die [README](README.md#wenn-die-prüfung-kaputt-ist), wie man ein Repo auf die vorige Version zurückstellt.
 
 Findet gitleaks Zugangsdaten, genügt Löschen nicht, weil der Wert in der Git-Historie bleibt. Zuerst den Zugang beim jeweiligen Dienst sperren und neu anlegen und den Org-Admins Bescheid geben. Danach entweder den gesperrten Fund einzeln in der `.gitleaks.toml` als Ausnahme eintragen, mit Begründung, oder die Historie bereinigen. Eine Bereinigung braucht einen Force-Push und wird deshalb als eigener Vorfall mit den Org-Admins abgesprochen. Ganze Ordner werden nie ausgenommen.
 
