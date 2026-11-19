@@ -67,11 +67,80 @@ body:
     attributes:
       label: Nicht Teil davon
       description: Was bauen wir bewusst nicht? Das verhindert, dass die Aufgabe immer größer wird.
+  - type: markdown
+    attributes:
+      value: |
+        **Ab hier die Spec.** Die Fragen kommen aus echten Pannen bei mokebo, zum Beispiel doppelte Tickets nach einem Abbruch mittendrin. Schreibt die Automation nirgendwohin, reicht bei den Fragen bis „Nachkontrolle“ ein „entfällt, liest nur“. Die Spec lebt nur in diesem Issue. Was bleiben soll, kommt vor dem Schließen in die README, in einen Test oder in eine Entscheidung (ADR 0007 in mokebo-ai).
+  - type: dropdown
+    id: schreibt
+    attributes:
+      label: Schreibt das irgendwohin?
+      description: Schreiben heißt, es ändert etwas außerhalb des Workflows. Zum Beispiel Plenty, Shopify, Zendesk, ein Sheet, eine Datenbank oder eine Nachricht an Kunden.
+      options:
+        - Nein, es liest nur, rechnet oder meldet
+        - Ja
+    validations:
+      required: true
+  - type: textarea
+    id: endzustand
+    attributes:
+      label: Endzustand je System
+      description: Was steht nach einem erfolgreichen Lauf wo? Eine Zeile je System. Darunter, wer dort sonst noch zum selben Fall schreibt, etwa ein anderer Workflow, das System selbst oder ein Mensch von Hand.
+      value: |
+        | System und Stelle | vorher | nachher |
+        |---|---|---|
+        | … | … | … |
+
+        Wer schreibt dort sonst noch zum selben Fall: …
+    validations:
+      required: true
+  - type: textarea
+    id: abbruch
+    attributes:
+      label: Abbruch mittendrin
+      description: Was ist schon geschrieben, wenn der Lauf nach einem schreibenden Schritt abbricht? Wer bekommt dann eine Meldung, und wo?
+    validations:
+      required: true
+  - type: textarea
+    id: zweiter_lauf
+    attributes:
+      label: Zweiter Lauf direkt danach
+      description: Was darf ein zweiter Lauf mit denselben Daten tun? Erwartet ist, dass nichts doppelt passiert. Woran erkennt er, dass ein Fall schon erledigt ist?
+    validations:
+      required: true
+  - type: textarea
+    id: randfaelle
+    attributes:
+      label: Randfälle
+      description: Je Randfall ein Satz, was passieren soll.
+      value: |
+        - System antwortet leer, mit Fehler oder mit Limit (429): …
+        - Ein Fall mit mehreren Teilen, zum Beispiel zwei Artikel in einer Bestellung: …
+        - …
+    validations:
+      required: true
+  - type: textarea
+    id: beispieldaten
+    attributes:
+      label: Beispieldaten
+      description: Welche festen Daten nimmt der Probelauf, und wo liegen sie im Repo? Je Randfall mindestens ein Datensatz. Keine echten Kundendaten.
+    validations:
+      required: true
+  - type: textarea
+    id: nachkontrolle
+    attributes:
+      label: Nachkontrolle
+      description: Wann wird nach dem Live-Gang lesend geprüft, ob es stimmt, und woran erkennt man das? Der Termin richtet sich nach dem fremden System, nicht nach einer festen Frist. Manche Systeme legen Tage später selbst noch etwas an, dann erst danach prüfen.
+    validations:
+      required: true
   - type: input
     id: zustaendig
     attributes:
-      label: Fachlich zuständig
-      description: Wer weiß, ob das Ergebnis stimmt?
+      label: Fachperson und Vertretung
+      description: Wer weiß, ob das Ergebnis stimmt, und wer vertritt diese Person? Bei schreibenden Änderungen gibt die Fachperson die Spec vor dem Bau frei, mit dem Kommentar „Spec frei“ in diesem Issue.
+      placeholder: z. B. Leitung Ops, Vertretung …
+    validations:
+      required: true
   - type: input
     id: asana
     attributes:

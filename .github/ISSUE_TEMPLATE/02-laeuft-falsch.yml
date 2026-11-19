@@ -50,3 +50,35 @@ body:
     id: asana
     attributes:
       label: Asana-Link, falls vorhanden
+  - type: markdown
+    attributes:
+      value: |
+        **Ab hier füllt aus, wer den Fehler repariert.** Wer nur meldet, kann hier aufhören.
+  - type: dropdown
+    id: fix_schreibt
+    attributes:
+      label: Schreibt der Fix irgendwohin?
+      description: Schreiben heißt, es ändert etwas außerhalb des Workflows, zum Beispiel in Plenty, Shopify, Zendesk, einem Sheet oder einer Datenbank.
+      options:
+        - noch offen
+        - Nein, es liest nur, rechnet oder meldet
+        - Ja
+  - type: textarea
+    id: fix_spec
+    attributes:
+      label: Spec für den Fix
+      description: Nur nötig, wenn der Fix irgendwohin schreibt. Bei schreibenden Fixes gibt die Fachperson die Spec vor dem Bau frei, mit dem Kommentar „Spec frei“.
+      value: |
+        **Endzustand je System** (vorher, nachher, wer schreibt dort sonst noch):
+
+        **Abbruch mittendrin** (was ist schon geschrieben, wer bekommt eine Meldung):
+
+        **Zweiter Lauf direkt danach** (was darf er tun, woran erkennt er Erledigtes):
+
+        **Randfälle** (leer, Fehler, Limit 429, Fall mit mehreren Teilen):
+
+        **Beispieldaten** (welche, wo im Repo, keine echten Kundendaten):
+
+        **Nachkontrolle** (wann, woran erkennbar, nach dem Takt des fremden Systems):
+
+        **Fachperson und Vertretung**:
