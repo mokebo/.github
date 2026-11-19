@@ -130,7 +130,7 @@ body:
     id: nachkontrolle
     attributes:
       label: Nachkontrolle
-      description: Wann wird nach dem Live-Gang lesend geprüft, ob es stimmt, und woran erkennt man das? Der Termin richtet sich nach dem fremden System, nicht nach einer festen Frist. Plenty legte zum Beispiel eine eigene Gutschrift erst rund 3 Tage später an.
+      description: Wann wird nach dem Live-Gang lesend geprüft, ob es stimmt, und woran erkennt man das? Der Termin richtet sich nach dem fremden System, nicht nach einer festen Frist. Manche Systeme legen Tage später selbst noch etwas an, dann erst danach prüfen.
     validations:
       required: true
   - type: input
